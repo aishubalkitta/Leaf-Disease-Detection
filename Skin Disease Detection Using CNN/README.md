@@ -1,4 +1,4 @@
-# Skin Disease Detection Using Convolutional Neural Network
+## Skin Disease Detection Using Convolutional Neural Network
 * Skin diseases are among the most common medical conditions that affect millions of people worldwide. 
 * Accurate and early diagnosis of skin diseases is crucial to prevent their progression and minimize their impact on the patient's quality of life.
 * Traditional methods of skin disease diagnosis involve visual inspection by dermatologists, which is subjective and time-consuming.
