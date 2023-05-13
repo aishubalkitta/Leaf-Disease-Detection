@@ -1,0 +1,43 @@
+.body-class {
+  background-color: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1qVE32snPvXPaI9qUgq2MV2fT6F4bfsdyQg&usqp=CAU";
+}
+.details {
+  height: 98vh;
+  width: 40vw;
+  border: 1px solid white;
+  background-color: #9faec7;
+}
+.logo {
+  width: 20vw;
+  height: 40vh;
+  margin-left: 140px;
+}
+.content {
+  color: white;
+  text-align: justify;
+  width: 38vw;
+  padding-right: 1em;
+  margin-top: 80px;
+  font-size: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.validation {
+  width: 90vw;
+  padding: 1px;
+  text-align: center;
+  height: 98vh;
+}
+label {
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+  color: #88898a;
+}
+input {
+  padding: 5px 10px;
+  width: 250px;
+}
