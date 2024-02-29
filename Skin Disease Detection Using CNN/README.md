@@ -19,5 +19,6 @@
 * Operating System - Windows
 * Tool - Google Colaboratory
 ### Sample Results
-![s3](https://github.com/aishubalkitta/Project-Works/assets/113792644/99d58fda-e89c-4ba1-832d-09e597eed6ee)
-![s4](https://github.com/aishubalkitta/Project-Works/assets/113792644/6a9dcdb9-61f7-4d58-9926-40f73c406257)
+![1](https://github.com/aishubalkitta/Projects/assets/113792644/62af5511-8b05-4a6e-8679-534db4990ca8)
+![2](https://github.com/aishubalkitta/Projects/assets/113792644/214f91eb-7891-4dfd-9407-5ff79462e9fc)
+
