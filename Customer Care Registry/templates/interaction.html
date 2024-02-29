@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home page</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/homepage.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+             <h2  class="logo"><i class="fas fa-people-carry"></i>&nbsp</i>Custocare</h2>
+            </div>
+                  <div class="search">
+            <button class="dropbtn"><a href="{{url_for('welcome')}}" style="text-decoration: none;color:#ff7200;">LOGOUT</a></button>
+        </div> </div>
+
+
+        <div class="sidebar">
+            <a href="{{url_for('home')}}">Home</a>
+            <a class="active" href="{{url_for('interaction')}}">Agent Interaction</a>
+            <a href="{{url_for('ticket')}}">Raise ticket</a>
+            <a href="{{url_for('status')}}">Status</a>
+            <a href="{{url_for('feedback')}}">Feedback</a>
+          </div>
+      
+          <div class="content">
+            <p style="color: #ff7200;font-size: 35px;font-weight: bold;font-family: Arial, Helvetica, sans-serif">What does it mean:</p>
+            <ul>
+                <li style="color: white;font-size: 27px;font-weight: bold;font-family: Arial, Helvetica, sans-serif">
+                    We consider customers as our valuable assets
+                </li><br>
+                <li style="color: white;font-size: 27px;font-weight: bold;font-family: Arial, Helvetica, sans-serif">
+                    We provide 24 x 7 user-agent interaction services
+                </li><br>
+                <li style="color: white;font-size: 27px;font-weight: bold;font-family: Arial, Helvetica, sans-serif">
+                   We provide quality live agent services 
+                </li><br>
+                <li style="color: white;font-size: 27px;font-weight: bold;font-family: Arial, Helvetica, sans-serif">
+                    Ask your queries and get it resolved by our experts
+                </li><br>
+                <li style="color: white;font-size: 27px;font-weight: bold;font-family: Arial, Helvetica, sans-serif">
+                    Click the button at the bottom right corner of the page to start a new conversation!
+                </li><br>
+            </ul>
+          </div>
+        </div>
+        <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "0441066db939ad8bce5cd56b10de96a49c22a1d41fdf7508077e5fdb3640a958", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.in/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>
+        </body>
+        </html>

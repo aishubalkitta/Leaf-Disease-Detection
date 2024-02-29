@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Feedback Form</title>
+<script src="https://kit.fontawesome.com/77a087af68.js" crossorigin="anonymous"></script>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+font-family: 'poppins',sans-serif;
+}
+.container{
+width:100%;
+height:100vh;
+background-color:rgb(27, 20, 106);
+display:flex;
+align-items:center;
+justify-content:left;
+
+}
+.feedbackbox{
+background:#fff;
+padding: 50px 50px;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+align-items:center;
+margin-left:300px;
+}
+
+.cn{
+    width: 160px;
+    height: 40px;
+    background: #ff7200;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .4s ease;
+    
+}
+
+
+.cn:hover{
+    background-color: rgb(27, 20, 106);
+    color: white;
+}
+
+.feedbackbox1{
+width:90vh;
+height:55vh;
+background:#fff;
+padding: 50px 50px;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:right;
+margin-left:70px;
+}
+.emoji{
+width:100px;
+height:100px;
+border-radius:50%;
+margin-bottom:30px;
+overflow:hidden;
+}
+.emoji img{
+width:80px;
+margin: 0 10px;
+}
+#emoji{
+display:flex;
+align-items:center;
+transform:translateX(-400px);        
+transition:0.3s;                      
+}
+.fa-solid{
+font-size:40px;
+color:#e4e4e4;
+cursor:pointer;
+}
+#demo{
+width:100px;
+height:100px;
+text-align:center;
+font-weight:bold;
+font-size:40px;
+font-style:italic;
+}
+.reply{
+padding:50px;
+}
+.btn1{
+border-radius:45%;
+width:100px;
+height:200px;
+background-image: linear-gradient(to right,#ff4b4b,#d12280);
+font-weight:bold;
+}
+.heading{
+width:300px;
+margin-left:20px;
+padding:10px;
+}
+.main{
+    width: 100%;
+    background: rgb(27, 20, 106);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.navbar{
+    height: 75px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.logo{
+    color: #ff7200;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-left: 160px;
+    margin-top: 5px
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #ff7200;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  .dropbtn {
+    background-color: var(--black);
+    color: #ff7300;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #f1f1f1;
+  }
+</style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+             <h2  class="logo"><i class="fas fa-people-carry"></i>&nbsp</i>Custocare</h2>
+            </div>
+                  <div class="search">
+            <button class="dropbtn"><a href="{{url_for('welcome')}}" style="text-decoration: none;color:#ff7200;">LOGOUT</a></button>
+        </div> </div>
+
+
+        <div class="sidebar">
+            <a  href="{{url_for('home')}}">Home</a>
+            <a href="{{url_for('interaction')}}">Agent Interaction</a>
+            <a href="{{url_for('ticket')}}">Raise ticket</a>
+            <a href="{{url_for('status')}}">Status</a>
+            <a class="active" href="{{url_for('feedback')}}">Feedback</a>
+          </div>
+<form action="/feed" method="post">
+<div class="container">
+<div class="feedbackbox">
+<div class="heading">
+<h3><em>RATE YOUR EXPERIENCE</em></h3></div>
+<div class="emoji">
+<div id="emoji">
+    <img src="https://hotemoji.com/images/dl/x/sad-emoji-by-google.png">
+    <img src="https://hotemoji.com/images/emoji/l/nmuz4btco9bl.png">
+    <img src="https://hotemoji.com/images/emoji/m/1ianb6011rcxjm.png">
+    <img src="https://hotemoji.com/images/emoji/i/1j2kh57yls6zi.png">
+    <img src="https://hotemoji.com/images/emoji/3/7ngxra8zxcj3.png">
+</div>
+</div>
+<div id="demo"></div>
+<input type="hidden" id="feed" name="feed" value="">
+<div class"rating">
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+</div>
+</div>
+<div class="feedbackbox1">
+<h3><em>LEAVE YOUR VIEWS HERE!</em></h3>
+<div class="reply">
+<textarea id="my-reply" name="my-reply" rows="7" cols="50"></textarea>
+</div>
+<button class="cn" name="submit" id="submit"><strong>SUBMIT</strong></button>
+</div>
+</div>
+</form>
+<script>
+var stars=document.getElementsByClassName("fa-solid");
+var emoji=document.getElementById("emoji");
+var demo=document.getElementById("demo");
+var feed=document.getElementById("feed");
+stars[0].onclick=function(){
+stars[0].style.color="#ffd93b";
+stars[1].style.color="#e4e4e4";
+stars[2].style.color="#e4e4e4";
+stars[3].style.color="#e4e4e4";
+stars[4].style.color="#e4e4e4";
+emoji.style.transform="translateX(0px)";
+demo.innerHTML="WORST";
+feed.value="WORST";
+}
+
+stars[1].onclick=function(){
+stars[0].style.color="#ffd93b";
+stars[1].style.color="#ffd93b";
+stars[2].style.color="#e4e4e4";
+stars[3].style.color="#e4e4e4";
+stars[4].style.color="#e4e4e4";
+emoji.style.transform="translateX(-100px)";
+demo.innerHTML="BAD";
+feed.value="BAD";
+}
+
+stars[2].onclick=function(){
+stars[0].style.color="#ffd93b";
+stars[1].style.color="#ffd93b";
+stars[2].style.color="#ffd93b";
+stars[3].style.color="#e4e4e4";
+stars[4].style.color="#e4e4e4";
+emoji.style.transform="translateX(-200px)";
+demo.innerHTML="OK";
+feed.value="OK";
+}
+
+stars[3].onclick=function(){
+stars[0].style.color="#ffd93b";
+stars[1].style.color="#ffd93b";
+stars[2].style.color="#ffd93b";
+stars[3].style.color="#ffd93b";
+stars[4].style.color="#e4e4e4";
+emoji.style.transform="translateX(-300px)";
+demo.innerHTML="GOOD";
+feed.value="GOOD";
+}
+
+stars[4].onclick=function(){
+stars[0].style.color="#ffd93b";
+stars[1].style.color="#ffd93b";
+stars[2].style.color="#ffd93b";
+stars[3].style.color="#ffd93b";
+stars[4].style.color="#ffd93b";
+emoji.style.transform="translateX(-400px)";
+demo.innerHTML="SUPER";
+feed.value="SUPER";
+}
+</script>
+</body>
+</html>

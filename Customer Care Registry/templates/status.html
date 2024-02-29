@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/status.css')}}">
+    
+    
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/homepage.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body >
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+             <h2  class="logo"><i class="fas fa-people-carry"></i>&nbsp</i>Custocare</h2>
+            </div>
+                  <div class="search">
+            <button class="dropbtn"><a href="{{url_for('welcome')}}" style="text-decoration: none;color:#ff7200;">LOGOUT</a></button>
+        </div> </div>
+
+
+        <div class="sidebar">
+            <a class="active" href="{{url_for('home')}}">Home</a>
+            <a href="{{url_for('interaction')}}">Agent Interaction</a>
+            <a href="{{url_for('ticket')}}">Raise ticket</a>
+            <a href="{{url_for('status')}}">Status</a>
+            <a href="{{url_for('feedback')}}">Feedback</a>
+          </div>
+    <fieldset disabled="disabled">
+ 
+    <div class="container" style="border-style: solid;
+    border-width: 5px;margin-top: 100px;background-color: white;">
+    {% for acc in account %}
+    <p  style="color: #ff7200;font-size: 27px;font-weight: bold;font-family: Arial, Helvetica, sans-serif ;align-items: center;margin-left: 125px;">STATUS BAR</p>
+        <div id="stepProgressBar">
+        <div class="step">
+            <p class="step-text">VIEW</p>
+            <div class="bullet1" id="bullet1"><div class="line1"></div></div>
+           
+        </div>
+        <div class="step">
+            <p class="step-text">IN PROGRESS</p>
+            <div class="bullet2" id="bullet2"><div class="line2"></div></div>
+        </div>
+        <div class="step">
+            <p class="step-text">COMPLETED</p>
+            <div class="bullet3" id="bullet3"></div>
+        </div>
+        <input type="hidden" value="{{acc[1]}}" id="stat">
+    </div>
+{% endfor %} 
+    </div>
+    <script>
+    
+var stat=document.getElementById("stat").value;
+if (stat=="VIEWED"){
+document.getElementById("bullet1").style.backgroundColor="#008000";
+}
+else if (stat=="IN-PROGRESS"){
+document.getElementById("bullet1").style.backgroundColor="#008000";
+document.getElementById("bullet2").style.backgroundColor="#008000";
+}
+else if (stat=="COMPLETED"){
+document.getElementById("bullet1").style.backgroundColor="#008000";
+document.getElementById("bullet2").style.backgroundColor="#008000";
+document.getElementById("bullet3").style.backgroundColor="#008000";
+}
+    </script>
+</fieldset>
+</body>
+</html>
